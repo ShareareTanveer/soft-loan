@@ -76,7 +76,7 @@ const AboutPage = () => {
         </p>
         <p className="text-gray-600 leading-7 mb-6 max-w-3xl md:w-3/5">
           Our platform is designed to support developers in building innovative
-          applications that solve real-world problems. Whether you're looking to
+          applications that solve real-world problems. Whether you&apos;re looking to
           create a personal finance app, a budgeting tool, or a payment
           solution, Plaid provides the foundation needed to bring your ideas to
           life.

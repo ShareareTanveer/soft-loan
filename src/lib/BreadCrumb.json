@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "slug": "/service",
+    "name": "SERVICE",
+    "pageTitle": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "section_down_scroll": "#service-section"
+  },
+  {
+    "id": "2",
+    "name": "Gallery",
+    "slug": "/gallery",
+    "pageTitle": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "section_down_scroll": "#service-section"
+  },
+  {
+    "id": "3",
+    "name": "about",
+    "slug": "/about",
+    "pageTitle": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "section_down_scroll": "#service-section"
+  },
+  {
+    "id": "3",
+    "name": "Blog",
+    "slug": "/blog",
+    "pageTitle": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "section_down_scroll": "#service-section"
+  },
+  {
+    "id": "3",
+    "name": "Blog details",
+    "slug": "/blog/:id",
+    "pageTitle": "test",
+    "section_down_scroll": "#service-section"
+  },
+  {
+    "id": "4",
+    "name": "Contact Us",
+    "slug": "/contact",
+    "pageTitle": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "section_down_scroll": "#service-section"
+  }
+]

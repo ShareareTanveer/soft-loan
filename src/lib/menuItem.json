@@ -1,0 +1,29 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "title": "home",
+      "link": "/"
+    },
+    {
+      "id": 2,
+      "title": "service",
+      "link": "/service"
+    },
+    {
+      "id": 4,
+      "title": "about",
+      "link": "/about"
+    },
+    {
+      "id": 5,
+      "title": "Contact Us",
+      "link": "/contact"
+    },
+    {
+      "id": 5,
+      "title": "Login",
+      "link": "/login"
+    }
+  ]
+}

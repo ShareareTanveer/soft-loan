@@ -28,7 +28,7 @@ export default function Login() {
           Join thousands of businesses building the future of digital finance
         </h1>
         <p className="mb-12">
-          With a free Plaid account, get your integration up and running in less
+          With a free softloan account, get your integration up and running in less
           than a week
         </p>
         <ul className="space-y-2">

@@ -99,11 +99,11 @@ const ApplicationStep1 = () => {
         </div>
 
         <div>
-          <label htmlFor="plaid-explanation" className="block text-sm font-medium text-gray-700">
-            Explain what it does, who it is for, and how it will use Plaid data
+          <label htmlFor="softloan-explanation" className="block text-sm font-medium text-gray-700">
+            Explain what it does, who it is for, and how it will use softloan data
           </label>
           <textarea
-            id="plaid-explanation"
+            id="softloan-explanation"
             rows={3}
             className="mt-1 block w-full border border-black rounded-none p-2"
             placeholder="Our service aggregates users' financial data to help them find the best credit card deals tailored to their spending habits."

@@ -31,7 +31,7 @@ export default function Registration() {
           Join thousands of businesses building the future of digital finance
         </h1>
         <p className="mb-12">
-          With a free Plaid account, get your integration up and running in less
+          With a free softloan account, get your integration up and running in less
           than a week.
         </p>
         <ul className="space-y-2">
@@ -128,11 +128,11 @@ export default function Registration() {
             </Link>
           </p>
           <p className="text-xs text-gray-500 mt-4">
-            By creating an account, you agree to Plaid&apos;s{" "}
+            By creating an account, you agree to softloan&apos;s{" "}
             <a href="#" className="text-gray-800 font-semibold">
               Terms of Use
             </a>{" "}
-            and consent to Plaid&apos;s{" "}
+            and consent to softloan&apos;s{" "}
             <a href="#" className="text-gray-800 font-semibold">
               Privacy Statement
             </a>

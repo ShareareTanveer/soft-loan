@@ -33,7 +33,7 @@ const Footer = () => {
         <div>
           <h3 className=" pb-5 mb-3 border-b border-white">About us</h3>
           <ul>
-            {["Company", "Careers", "Contact", "Partners", "Press", "Safety", "How we handle data", "Legal", "Why Plaid"].map((item) => (
+            {["Company", "Careers", "Contact", "Partners", "Press", "Safety", "How we handle data", "Legal", "Why softloan"].map((item) => (
               <li key={item} className="mb-2 hover:text-gray-300 cursor-pointer">
                 {item}
               </li>
@@ -45,7 +45,7 @@ const Footer = () => {
         <div>
           <h3 className=" pb-5 mb-3 border-b border-white">For consumers</h3>
           <ul>
-            {["How it works", "Discover apps", "Trouble connecting?", "Plaid Portal", "Delete my data", "Inc."].map((item) => (
+            {["How it works", "Discover apps", "Trouble connecting?", "softloan Portal", "Delete my data", "Inc."].map((item) => (
               <li key={item} className="mb-2 hover:text-gray-300 cursor-pointer">
                 {item}
               </li>
@@ -69,7 +69,7 @@ const Footer = () => {
         <div>
           <h3 className=" pb-5 mb-3 border-b border-white">Resources</h3>
           <ul>
-            {["Pricing", "Global coverage", "Plaid Blog", "Industry resources"].map((item) => (
+            {["Pricing", "Global coverage", "softloan Blog", "Industry resources"].map((item) => (
               <li key={item} className="mb-2 hover:text-gray-300 cursor-pointer">
                 {item}
               </li>
@@ -93,7 +93,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-8 text-center text-gray-500 text-sm">
         <div className="flex justify-center items-center space-x-4 mb-4">
-          <span>© 2024 Plaid Inc.</span>
+          <span>© 2024 softloan Inc.</span>
         </div>
         <div className="flex justify-center space-x-4">
           <a href="#" className="text-gray-400 hover:text-white" aria-label="Twitter">

@@ -19,7 +19,7 @@ const AboutPage = () => {
           </h1>
           <p className="text-3xl mb-6">Unlock financial freedom for everyone</p>
           <p className="max-w-2xl mx-auto lg:mx-0">
-            Plaid is focused on democratizing financial services through
+            softloan is focused on democratizing financial services through
             technology. We build beautiful consumer experiences,
             developer-friendly infrastructure, and intelligent tools that give
             everyone the ability to create amazing products that solve big
@@ -59,17 +59,17 @@ const AboutPage = () => {
           <h2 className="text-4xl font-extrabold text-basicColor my-4">
             8,000+
           </h2>
-          <p className="text-gray-700 mt-2">Fintechs are built on Plaid</p>
+          <p className="text-gray-700 mt-2">Fintechs are built on softloan</p>
         </div>
       </div>
 
       {/* About Section */}
       <div className="max-w-screen-lg mx-auto py-20 px-4">
         <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-center md:text-left">
-          About Plaid
+          About softloan
         </h2>
         <p className="text-gray-600 leading-7 mb-6 max-w-3xl md:w-3/5">
-          Plaid is committed to democratizing access to financial services by
+          softloan is committed to democratizing access to financial services by
           providing secure, reliable, and user-friendly solutions that empower
           individuals and businesses alike. By connecting more than 12,000
           financial institutions, we ensure seamless integration for our users.
@@ -78,7 +78,7 @@ const AboutPage = () => {
           Our platform is designed to support developers in building innovative
           applications that solve real-world problems. Whether you&apos;re looking to
           create a personal finance app, a budgeting tool, or a payment
-          solution, Plaid provides the foundation needed to bring your ideas to
+          solution, softloan provides the foundation needed to bring your ideas to
           life.
         </p>
         <button className="bg-black text-white py-3 px-6 hover:bg-gray-800 transition duration-300">
@@ -95,7 +95,7 @@ const AboutPage = () => {
             </h2>
             <p className="max-w-2xl mb-6 pr-16">
               Digital finance is everywhere, but it’s just getting started.
-              Plaid raises Series D to support growth and enable the next
+              softloan raises Series D to support growth and enable the next
               generation of digital financial services.
             </p>
             <button className="mt-4 bg-black text-white py-3 px-6">
@@ -119,7 +119,7 @@ const AboutPage = () => {
         <div className="md:w-1/3">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Customers</h2>
           <p className="max-w-3xl mb-6 md:pr-4">
-            Digital finance is everywhere, but it’s just getting started. Plaid
+            Digital finance is everywhere, but it’s just getting started. softloan
             raises Series D to support growth and enable the next generation of
             digital financial services.
           </p>

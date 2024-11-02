@@ -52,25 +52,25 @@ const ContactSection = () => {
               Submit
             </button>
             <p className="text-sm mt-4">
-              By submitting this form, I confirm that I have read and understood Plaid&apos;s{" "}
+              By submitting this form, I confirm that I have read and understood softloan&apos;s{" "}
               <a href="#" className="underline">
                 Privacy Statement
               </a>
               .
             </p>
             <p className="text-sm mt-4">
-              This form goes to our sales team. If you have questions about connecting your financial accounts to a Plaid-powered app, visit our{" "}
+              This form goes to our sales team. If you have questions about connecting your financial accounts to a softloan-powered app, visit our{" "}
               <a href="#" className="underline">
                 consumer help center
               </a>{" "}
               for more information.
             </p>
             <p className="text-sm mt-4">
-              For developers and existing Plaid customers,{" "}
+              For developers and existing softloan customers,{" "}
               <a href="#" className="underline">
                 please open a case
               </a>{" "}
-              through the Plaid Dashboard.
+              through the softloan Dashboard.
             </p>
           </form>
         </div>
@@ -78,7 +78,7 @@ const ContactSection = () => {
         {/* Right Info Section */}
         <div>
           <p className="m-b py-6 border-t-2 border-gray-800">
-            Join the thousands of innovators that are already building with Plaid
+            Join the thousands of innovators that are already building with softloan
           </p>
           <div className="grid grid-cols-2 gap-4 mb-10">
             <span className="font-semibold text-lg">Betterment</span>

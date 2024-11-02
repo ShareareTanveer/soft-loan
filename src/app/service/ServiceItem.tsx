@@ -4,10 +4,10 @@ import { getOurServiceList } from "@/lib/services/our-service.service";
 import { IOurService } from "@/lib/interfaces/service.interface";
 
 const ServiceItem = async () => {
-  const services: IOurService[] = await getOurServiceList();
+  // const services: IOurService[] = await getOurServiceList();
   return (
     <div className="grid lg:grid-cols-4 gap-6  max-w-screen-xl mx-auto px-2 py-28">
-      {services?.map((item: any) => (
+      {/* {services?.map((item: any) => (
         <Link key={item?.id} href={`service/${item?.id}`}>
           <div className="text-center space-y-3 py-12 px-6 rounded-xl hover:shadow-xl duration-300 hover:duration-300 hover:border hover:cursor-pointer bg-grayColor">
             <div dangerouslySetInnerHTML={{ __html: item.icon }} />
@@ -26,7 +26,7 @@ const ServiceItem = async () => {
             </p>
           </div>
         </Link>
-      ))}
+      ))} */}
     </div>
   );
 };

@@ -75,7 +75,7 @@ export default function Login() {
             Create account
           </button>
           <p className="mt-6 text-gray-600">
-            Don't Have an account?{" "}
+            Don&apos;t Have an account?{" "}
             <Link href="/registration" className="text-gray-800 font-semibold">
               Sign up
             </Link>

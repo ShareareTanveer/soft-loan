@@ -32,7 +32,7 @@ const AboutPage = () => {
       </div>
 
       {/* Video Section */}
-      <div className=" max-w-screen-lg mx-auto py-20 px-4 text-center">
+      {/* <div className=" max-w-screen-lg mx-auto py-20 px-4 text-center">
         <div className="relative aspect-w-16 aspect-h-9">
           <iframe
             className="w-full h-full"
@@ -41,34 +41,49 @@ const AboutPage = () => {
             allowFullScreen
           ></iframe>
         </div>
-      </div>
+      </div> */}
 
       {/* Statistics Section */}
-      <div className=" max-w-screen-lg mx-auto py-20 px-4 md:px-0 grid grid-cols-1 lg:grid-cols-3 gap-10 text-center">
-        <div className="">
-          <h2 className="text-4xl font-bold">900+</h2>
-          <p>team members have joined our mission</p>
+      <div className="max-w-screen-lg mx-auto pt-20 pb-10 px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+        <div className="flex flex-col items-center">
+          <h2 className="text-4xl font-extrabold text-basicColor my-4">900+</h2>
+          <p className="text-gray-700 mt-2">
+            Team members have joined our mission
+          </p>
         </div>
-        <div>
-          <h2 className="text-4xl font-bold">6</h2>
-          <p>offices around the world</p>
+        <div className="flex flex-col items-center">
+          <h2 className="text-4xl font-extrabold text-basicColor my-4">6</h2>
+          <p className="text-gray-700 mt-2">Offices around the world</p>
         </div>
-        <div>
-          <h2 className="text-4xl font-bold">8,000+</h2>
-          <p>fintechs are built on Plaid</p>
+        <div className="flex flex-col items-center">
+          <h2 className="text-4xl font-extrabold text-basicColor my-4">
+            8,000+
+          </h2>
+          <p className="text-gray-700 mt-2">Fintechs are built on Plaid</p>
         </div>
       </div>
 
       {/* About Section */}
-      <div className=" max-w-screen-lg mx-auto py-20 px-4">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-4">About Plaid</h2>
-        <p className="max-w-3xl mb-6 md:w-2/5 leading-6">
-          We make it easy for people to securely connect their financial
-          accounts to the fintech services they choose. Our developer-friendly
-          platform supports over 12,000 financial institutions to be accessible
-          to everyone.
+      <div className="max-w-screen-lg mx-auto py-20 px-4">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-center md:text-left">
+          About Plaid
+        </h2>
+        <p className="text-gray-600 leading-7 mb-6 max-w-3xl md:w-3/5">
+          Plaid is committed to democratizing access to financial services by
+          providing secure, reliable, and user-friendly solutions that empower
+          individuals and businesses alike. By connecting more than 12,000
+          financial institutions, we ensure seamless integration for our users.
         </p>
-        <button className="bg-black text-white py-3 px-6">Join us</button>
+        <p className="text-gray-600 leading-7 mb-6 max-w-3xl md:w-3/5">
+          Our platform is designed to support developers in building innovative
+          applications that solve real-world problems. Whether you're looking to
+          create a personal finance app, a budgeting tool, or a payment
+          solution, Plaid provides the foundation needed to bring your ideas to
+          life.
+        </p>
+        <button className="bg-black text-white py-3 px-6 hover:bg-gray-800 transition duration-300">
+          Learn More About Our Mission
+        </button>
       </div>
 
       {/* News Section */}
@@ -100,13 +115,13 @@ const AboutPage = () => {
       </div>
 
       {/* Partners Section */}
-      <div className="min-h-screen mx-auto py-20 px-4 lg:px-20 md:flex justify-between items-center gap-6">
+      <div className="min-h-screen mx-auto py-4 px-4 lg:px-20 md:flex justify-between items-center gap-6">
         <div className="md:w-1/3">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Customers</h2>
           <p className="max-w-3xl mb-6 md:pr-4">
-          Digital finance is everywhere, but it’s just getting started.
-              Plaid raises Series D to support growth and enable the next
-              generation of digital financial services.
+            Digital finance is everywhere, but it’s just getting started. Plaid
+            raises Series D to support growth and enable the next generation of
+            digital financial services.
           </p>
           <button className="mt-4 bg-black text-white py-3 px-6">
             Meet our customers
@@ -116,7 +131,7 @@ const AboutPage = () => {
           <Image
             src={s2}
             alt={"s2"}
-            height={800}
+            height={600}
             width={900}
             className="mx-auto transition ease-out delay-150 duration-300 hover:translate-x-6 hover:duration-300"
           />

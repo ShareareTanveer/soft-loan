@@ -53,7 +53,7 @@ const Navbar = () => {
                   key={menu?.id}
                   className={`capitalize px-5 border-b-0 transition ease-in-out delay-150 ${
                     isActive
-                      ? "scale-110 text-basicColor py-[13px]"
+                      ? "scale-110 py-[13px] font-bold"
                       : "underline-effect"
                   }`}
                 >
@@ -109,6 +109,13 @@ const Navbar = () => {
                   </Link>
                 );
               })}
+               <Link
+                    href={"/login"}
+                    className='uppercase font-semibold py-2 px-4 transition ease-in-out delay-150 duration-300 hover:bg-gray-200'                    
+                    onClick={toggleSidebar}
+                  >
+                   Login
+                  </Link>
             </div>
           </div>
         </div>

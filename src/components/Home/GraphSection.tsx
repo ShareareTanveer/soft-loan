@@ -14,7 +14,7 @@ const GraphSection = () => {
       <div>
         <p className="text-sm font-semibold text-gray-500">PERFORMANCE</p>
         <h2 className="text-2xl text-gray-900">
-          Impact that's Instant, and Lasting
+          Impact that&apos;s Instant, and Lasting
         </h2>
       </div>
 

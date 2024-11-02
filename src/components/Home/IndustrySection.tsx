@@ -80,7 +80,7 @@ const IndustrySection = () => {
           Explore all use-cases
         </button>
         <button className="border border-gray-300 text-basicColor font-semibold py-4 px-6 rounded-lg hover:bg-gray-100 w-full sm:w-auto">
-          Can't find your use-case?
+          Can&apos;t find your use-case?
         </button>
       </div>
     </div>

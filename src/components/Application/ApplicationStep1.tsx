@@ -121,7 +121,7 @@ const ApplicationStep1 = () => {
             placeholder="https://codecanvascreation.com"
           />
           <p className="text-gray-500 mt-1">
-            If you don't have a website, please provide your LinkedIn or Github page.
+            If you don&apos;t have a website, please provide your LinkedIn or Github page.
           </p>
         </div>
 

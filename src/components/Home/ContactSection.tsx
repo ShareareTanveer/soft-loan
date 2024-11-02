@@ -61,7 +61,7 @@ const ContactSection = () => {
             Talk with our team →
           </button>
           <p className="text-sm text-gray-500 mt-4">
-            By submitting this form, I confirm that I have read and understood Plaid's{" "}
+            By submitting this form, I confirm that I have read and understood Plaid&apos;s{" "}
             <a href="#" className="text-blue-600 underline">Privacy Statement</a>.
           </p>
         </form>

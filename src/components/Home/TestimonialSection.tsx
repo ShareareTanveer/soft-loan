@@ -53,7 +53,7 @@ const TestimonialSection = () => {
 
             {/* Title */}
             <h3 className="text-3xl text-basicColor mt-12">
-              <span className="text-4xl leading-12">"</span> {testimonial.title} <span>"</span>
+              <span className="text-4xl leading-12">&quot;</span> {testimonial.title} <span>&quot;</span>
             </h3>
 
             {/* Content */}

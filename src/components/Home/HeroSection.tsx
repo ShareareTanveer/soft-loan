@@ -17,10 +17,10 @@ const HeroSection = () => {
     <div className="container mx-auto space-y-20 pt-8 lg:py-24">
       <div className="lg:grid grid-cols-2 gap-5 px-4 md:px-0">
         <div className="space-y-6 text-center lg:text-left">
-          <div className="text-3xl md:text-4xl lg:text-5xl">
+          <div className="text-3xl md:text-6xl lg:text-6xl">
             <div className="space-y-2">
               <h1 className="text-basicColor">Flexible Online Loans</h1>
-              <h1 className="text-2xl md:text-3xl">Designed for Your Needs</h1>
+              <h1 className="text-2xl md:text-6xl">Designed for Your Needs</h1>
               <div className="w-fit px-6 border border-gray-400 rounded-full text-gray-700 my-2 bg-gray-100">
                 <p className="text-sm py-2 font-medium">
                   Fast Approval | Customizable Terms | Secure Platform

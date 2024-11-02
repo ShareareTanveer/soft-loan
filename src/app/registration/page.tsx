@@ -128,11 +128,11 @@ export default function Registration() {
             </Link>
           </p>
           <p className="text-xs text-gray-500 mt-4">
-            By creating an account, you agree to Plaid's{" "}
+            By creating an account, you agree to Plaid&apos;s{" "}
             <a href="#" className="text-gray-800 font-semibold">
               Terms of Use
             </a>{" "}
-            and consent to Plaid's{" "}
+            and consent to Plaid&apos;s{" "}
             <a href="#" className="text-gray-800 font-semibold">
               Privacy Statement
             </a>

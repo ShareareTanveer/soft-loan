@@ -17,13 +17,8 @@
     },
     {
       "id": 5,
-      "title": "Contact Us",
+      "title": "Contact",
       "link": "/contact"
-    },
-    {
-      "id": 5,
-      "title": "Login",
-      "link": "/login"
     }
   ]
 }

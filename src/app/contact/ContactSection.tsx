@@ -10,7 +10,7 @@ const ContactSection = () => {
         {/* Left Form Section */}
         <div>
           <p className="mb-6">
-            Ready to build the future of digital finance? Reach out to our sales team and we'll be in touch.
+            Ready to build the future of digital finance? Reach out to our sales team and we&apos;ll be in touch.
           </p>
           <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -52,7 +52,7 @@ const ContactSection = () => {
               Submit
             </button>
             <p className="text-sm mt-4">
-              By submitting this form, I confirm that I have read and understood Plaid's{" "}
+              By submitting this form, I confirm that I have read and understood Plaid&apos;s{" "}
               <a href="#" className="underline">
                 Privacy Statement
               </a>

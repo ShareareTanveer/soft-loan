@@ -5,15 +5,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const pathName = usePathname();
-
+  const { data: session } = useSession();
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  console.log(session);
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -30,13 +33,21 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: "/" });
+  };
+
   return (
     <div
       className={`${
-        isSticky ? "fixed top-0 left-0 right-0 z-50 shadow-md bg-white" : "relative bg-transparent"
+        isSticky
+          ? "fixed top-0 left-0 right-0 z-50 shadow-md bg-white"
+          : "relative bg-transparent"
       }`}
     >
-      <nav className={`mx-auto transition-all duration-300 container bg-white z-50`}>
+      <nav
+        className={`mx-auto transition-all duration-300 container bg-white z-50`}
+      >
         <div className="flex items-center justify-between py-2  mx-auto">
           <div>
             <Link href={"/"} className="text-xl text-black font-bold">
@@ -61,6 +72,14 @@ const Navbar = () => {
                 </Link>
               );
             })}
+            {session && (
+              <Link
+                href="/dashboard"
+                className="capitalize px-5 border-b-0 transition ease-in-out delay-150"
+              >
+                Dashboard
+              </Link>
+            )}
           </div>
           <div className="hidden lg:flex mx-4 space-x-2">
             <Link
@@ -69,14 +88,28 @@ const Navbar = () => {
             >
               Apply
             </Link>
-            <Link
-              href={"/login"}
-              className="border text-sm px-6 py-3 rounded-md bg-basicColor text-white"
-            >
-              Login
-            </Link>
+            {session ? (
+              <>
+                <button
+                  onClick={handleLogout}
+                  className="border text-sm px-6 py-3 rounded-md bg-basicColor text-white"
+                  >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link
+                href={"/login"}
+                className="border text-sm px-6 py-3 rounded-md bg-basicColor text-white"
+              >
+                Login
+              </Link>
+            )}
           </div>
-          <div className="lg:hidden block cursor-pointer mx-4" onClick={toggleSidebar}>
+          <div
+            className="lg:hidden block cursor-pointer mx-4"
+            onClick={toggleSidebar}
+          >
             <FontAwesomeIcon icon={faBars} />
           </div>
         </div>
@@ -109,13 +142,30 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-               <Link
-                    href={"/login"}
-                    className='uppercase font-semibold py-2 px-4 transition ease-in-out delay-150 duration-300 hover:bg-gray-200'                    
+              {session ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="uppercase font-semibold py-2 px-4 transition ease-in-out delay-150 duration-300 hover:bg-gray-200"
                     onClick={toggleSidebar}
                   >
-                   Login
+                    Dashboard
                   </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="border text-sm px-6 py-3 rounded-md bg-basicColor text-white"
+                    >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href={"/login"}
+                  className="border text-sm px-6 py-3 rounded-md bg-basicColor text-white"
+                >
+                  Login
+                </Link>
+              )}
             </div>
           </div>
         </div>

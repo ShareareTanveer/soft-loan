@@ -1,24 +1,61 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import PrimaryButton from "@/components/shared/PrimaryBtn";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useRouter } from "next/navigation";
+import { registration } from "@/lib/services/registration.service";
+
+const schema = z.object({
+  email: z
+    .string({
+      required_error: "Email is required",
+      invalid_type_error: "Email must be a string",
+    })
+    .email("Email is not valid"),
+  password: z
+    .string({
+      required_error: "Password is required",
+    })
+    .min(4, "Password must be at least 4 characters long"),
+  last_name: z.string(),
+  first_name: z
+    .string({
+      required_error: "first name is required",
+    })
+    .min(4, "first name must be at least 4 characters long"),
+});
 
 export default function Registration() {
-  const [form, setForm] = useState({
-    email: "",
-    fullName: "",
-    companyName: "",
-    country: "",
-    password: "",
+  const router = useRouter();
+  const [responseError, setResponseError] = useState<any>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  }: any = useForm({
+    resolver: zodResolver(schema),
+    mode: "all",
   });
 
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log(form);
+  const onSubmit = async (data: FormData): Promise<void> => {
+    try {
+      setResponseError(null);
+      const res: any = await registration(data);
+      if (res?.status == 201) {
+        router.push("/login");
+      } else {
+        throw new Error("could not register");
+      }
+    } catch (error: any) {
+      setResponseError(
+        error?.response?.data?.details ||
+          error?.message ||
+          "Something went wrong"
+      );
+    }
   };
 
   return (
@@ -31,8 +68,8 @@ export default function Registration() {
           Join thousands of businesses building the future of digital finance
         </h1>
         <p className="mb-12">
-          With a free softloan account, get your integration up and running in less
-          than a week.
+          With a free softloan account, get your integration up and running in
+          less than a week.
         </p>
         <ul className="space-y-2">
           <li>✔️ Test in our Sandbox environment</li>
@@ -45,88 +82,115 @@ export default function Registration() {
       </div>
 
       <div className="lg:w-2/3 p-10 flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="w-full max-w-md">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6">Create your account</h2>
+
           <div className="mb-4">
             <label className="block text-xs text-gray-500">Email</label>
             <input
               type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
+              {...register("email")}
               className="w-full p-3 border border-gray-900"
               placeholder="Email"
-              required
             />
+            {errors.email && (
+              <span className="text-red-500 mb-4 text-xs">
+                {errors.email.message}
+              </span>
+            )}
+            {responseError && responseError.email && (
+              <span className="text-red-500 mb-4 text-xs">
+                {responseError.email[0]}
+              </span>
+            )}
           </div>
+
           <div className="mb-4">
-            <label className="block text-xs text-gray-500">Full name</label>
+            <label className="block text-xs text-gray-500">First Name</label>
             <input
               type="text"
-              name="fullName"
-              value={form.fullName}
-              onChange={handleChange}
+              {...register("first_name")}
               className="w-full p-3 border border-gray-900"
-              placeholder="Full name"
-              required
+              placeholder="First Name"
             />
+            {errors.first_name && (
+              <span className="text-red-500 mb-4 text-xs">
+                {errors.first_name.message}
+              </span>
+            )}
+            {responseError && responseError.first_name && (
+              <span className="text-red-500 mb-4 text-xs">
+                {responseError.first_name[0]}
+              </span>
+            )}
           </div>
+
           <div className="mb-4">
-            <label className="block text-xs text-gray-500">Company name</label>
+            <label className="block text-xs text-gray-500">Last Name</label>
             <input
               type="text"
-              name="companyName"
-              value={form.companyName}
-              onChange={handleChange}
+              {...register("last_name")}
               className="w-full p-3 border border-gray-900"
-              placeholder="Company name"
+              placeholder="Last Name"
             />
+            {errors.last_name && (
+              <span className="text-red-500 mb-4 text-xs">
+                {errors.last_name.message}
+              </span>
+            )}
+            {responseError && responseError.last_name && (
+              <span className="text-red-500 mb-4 text-xs">
+                {responseError.last_name[0]}
+              </span>
+            )}
           </div>
-          <div className="mb-4">
-            <label className="block text-xs text-gray-500">Country</label>
-            <select
-              name="country"
-              value={form.country}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-900"
-            >
-              <option value="">Select Country</option>
-              <option value="USA">USA</option>
-              <option value="Canada">Canada</option>
-              <option value="UK">UK</option>
-              {/* Add more country options as needed */}
-            </select>
-          </div>
+
           <div className="mb-6">
             <label className="block text-xs text-gray-500">Password</label>
             <input
               type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
+              {...register("password")}
               className="w-full p-3 border border-gray-900"
               placeholder="Password"
               required
             />
+            {errors.password && (
+              <span className="text-red-500 mb-4 text-xs">
+                {errors.password.message}
+              </span>
+            )}
+            {responseError && responseError.password && (
+              <span className="text-red-500 mb-4 text-xs">
+                {responseError.password[0]}
+              </span>
+            )}
+            {!errors && responseError && !responseError.password && (
+              <span className="text-red-500 mb-4 text-xs">{responseError}</span>
+            )}
           </div>
+
           <div className="flex items-center mb-4">
             <input type="checkbox" className="mr-2" id="contactSales" />
             <label htmlFor="contactSales" className="text-gray-700">
               Contact Sales
             </label>
           </div>
-          <button
+
+          <PrimaryButton
             type="submit"
-            className="w-full bg-basicColor text-white p-3 font-semibold hover:bg-gray-800"
+            isLoading={isSubmitting}
+            className={"w-full"}
           >
             Create account
-          </button>
+          </PrimaryButton>
+
           <p className="mt-6 text-gray-600">
             Have an account?{" "}
             <Link href="/login" className="text-gray-800 font-semibold">
               Sign in with email
             </Link>
           </p>
+
           <p className="text-xs text-gray-500 mt-4">
             By creating an account, you agree to softloan&apos;s{" "}
             <a href="#" className="text-gray-800 font-semibold">

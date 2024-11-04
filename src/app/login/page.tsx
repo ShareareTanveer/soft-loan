@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
   email: z
@@ -25,6 +26,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function Login() {
+  const { toast } = useToast();
   const router = useRouter();
   const [responseError, setResponseError] = useState<string | null>(null);
   const {
@@ -43,9 +45,18 @@ export default function Login() {
       email: data.email,
       password: data.password,
     });
+    toast({
+      title: "Succes",
+      description: "Logged In Successfully",
+    });
 
     if (res?.error) {
       setResponseError(res.error || "Invalid email or password");
+      toast({
+        title: "Error",
+        description: "Failed to log in.",
+        variant: "destructive",
+      });
     } else if (res?.ok) {
       router.push("/dashboard");
     }

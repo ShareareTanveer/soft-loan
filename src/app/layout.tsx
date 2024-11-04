@@ -4,6 +4,8 @@ import "./globals.css";
 import { AOSInit } from "@/lib/aos";
 import MainLayout from "@/components/layout/MainLayout";
 import SessionProviderWrapper from "@/components/shared/SessionProviderWrapper";
+import { UserProvider } from "@/lib/contexts/userInfoContext";
+import { Toaster } from "@/components/ui/toaster";
 
 // const roboto = Roboto({ subsets: [], weight: "400" });
 const inter = Inter({ subsets: [], weight: "400" });
@@ -23,8 +25,11 @@ export default async function RootLayout({
       <AOSInit />
       <body>
         <SessionProviderWrapper>
-          <MainLayout>{children}</MainLayout>
+          <UserProvider>
+            <MainLayout>{children}</MainLayout>
+          </UserProvider>
         </SessionProviderWrapper>
+        <Toaster />
       </body>
     </html>
   );

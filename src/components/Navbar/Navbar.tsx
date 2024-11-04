@@ -16,8 +16,6 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  console.log(session);
-
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsSticky(true);

@@ -8,7 +8,7 @@ import Navbar from "../Navbar/Navbar";
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
-  const hiddenPaths = ["/login", "/registration", "/application", "/dashboard"];
+  const hiddenPaths = ["/login", "/registration", "/application", "/dashboard", "/dashboard/settings"];
   const hideNavAndFooter = hiddenPaths.includes(pathname);
 
   return (

@@ -7,7 +7,7 @@ export const postContactUs = async (data: any) => {
     const response = await axiosInstance.post(`/core/contact-us?serviceId=${serviceId}`, data)
     return response.data.data;
   } catch (error) {
-    console.log(error)
+    // console.log(error)
     // throw new Error("Error creating Contact")
   }
 };

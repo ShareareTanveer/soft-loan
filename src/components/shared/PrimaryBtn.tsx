@@ -1,9 +1,9 @@
 // PrimaryButton.js
 import React from "react";
-
+import { Button } from "@/components/ui/button";
 const PrimaryButton = ({ type="button", onClick, isLoading, children, className = "", disabled = false }: any) => {
   return (
-    <button
+    <Button
       type={type}
       onClick={onClick}
       disabled={isLoading || disabled}
@@ -19,7 +19,7 @@ const PrimaryButton = ({ type="button", onClick, isLoading, children, className 
       ) : (
         children
       )}
-    </button>
+    </Button>
   );
 };
 

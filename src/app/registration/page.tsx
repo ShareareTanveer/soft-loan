@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { registration } from "@/lib/services/registration.service";
+import { toast } from "@/hooks/use-toast";
 
 const schema = z.object({
   email: z
@@ -45,11 +46,25 @@ export default function Registration() {
       setResponseError(null);
       const res: any = await registration(data);
       if (res?.status == 201) {
+        toast({
+          title: "Succes",
+          description: "Sign up In Successful",
+        });
         router.push("/login");
       } else {
+        toast({
+          title: "Error",
+          description: "Failed to sign up.",
+          variant: "destructive",
+        });
         throw new Error("could not register");
       }
     } catch (error: any) {
+      toast({
+        title: "Error",
+        description: "Failed to sign up.",
+        variant: "destructive",
+      });
       setResponseError(
         error?.response?.data?.details ||
           error?.message ||

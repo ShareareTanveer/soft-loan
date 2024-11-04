@@ -17,12 +17,12 @@ export const authOptions: NextAuthOptions = {
             email: credentials?.email,
             password: credentials?.password,
           });
-
-          if (response.data) {
-            return {
-              accessToken: response.data.access,
-              refreshToken: response.data.refresh,
+          if (response?.data?.data?.access) {
+            const data ={
+              accessToken: response.data.data.access,
+              refreshToken: response.data.data.refresh,
             };
+            return data
           }
         } catch (error) {
           console.error("Authorization error", error);

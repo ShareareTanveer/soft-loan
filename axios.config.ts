@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getSession } from 'next-auth/react';
 
 const axiosInstance = axios.create({
   baseURL: 'http://127.0.0.1:8000',
@@ -8,12 +9,13 @@ const axiosInstance = axios.create({
   },
 });
 
+// Add an interceptor to attach the token dynamically
 axiosInstance.interceptors.request.use(
-  (config) => {
-    // const token = localStorage.getItem('token');
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
+  async (config) => {
+    const session:any = await getSession();
+    if (session?.accessToken) {
+      config.headers.Authorization = `JWT ${session.accessToken}`;
+    }
     return config;
   },
   (error) => Promise.reject(error)
@@ -23,9 +25,9 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     // Handle errors globally
-    // For example, logging out the user if a 401 response is received
-    // if (error.response && error.response.status === 401) {
-    // }
+    if (error.response && error.response.status === 401) {
+      // Optional: handle 401 errors globally (e.g., redirect to login)
+    }
     return Promise.reject(error);
   }
 );
